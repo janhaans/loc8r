@@ -3,11 +3,31 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title= title
-    link(href='bootstrap/css/bootstrap.min.css', rel='stylesheet')
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-cerulean.min.css')
   body
-    block content
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3.jquery.min.js')
-    script(src='bootstrap/js/bootstrap.min.js')
+    .navbar.navbar-default(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/') loc8r
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#main')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          #main.navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='/about') About
+              li
+                a(href='#') News
+    .container-fluid
+      block content
+    .footer
+      .row
+        .col-xs-12
+          small &copy; Jan Haans 2016
+    script(src='/javascripts/jquery-1.11.3.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
